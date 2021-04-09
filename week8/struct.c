@@ -13,33 +13,36 @@ struct student {
 };
 
 void print_student(struct student a_student);
-void change_mark(struct student a_student, int new_mark);
+void change_mark(struct student the_student, double new_mark);
 
 int main(void) {
     
     // Create a stuct student with name "Frankie"
     // with zID = z1234567 & ass1_mark of 76.23
-    struct student my_student;
+    struct student      student1;
 
-    my_student.zid = 1234567;
-    my_student.ass1_mark = 45.2;
-    strcpy(my_student.name, "Tom");
+    student1.zid = 1234567;
+    student1.ass1_mark = 46.2;
+    strcpy(student1.name, "Tom");
 
-    print_student(my_student);
+    // Print the student
+    print_student(student1);
+    
 
-    change_mark(my_student, 82.4);
+    // Change the mark
+    change_mark(student1, 99.81);
 
-    print_student(my_student);
+    // Print it again
+    print_student(student1);
+
 }
 
 void print_student(struct student a_student){
     printf("%s with zID z%d has an assignment1 mark of %f\n", a_student.name, a_student.zid, a_student.ass1_mark);
 }
 
-void change_mark(struct student a_student, double new_mark) {
+void change_mark(struct student the_student, double new_mark) {
 
-    a_student.ass1_mark = new_mark;
-
-    return;
+    the_student.ass1_mark = new_mark;
 
 }
