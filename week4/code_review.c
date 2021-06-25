@@ -1,34 +1,33 @@
-// Written by Tom Killingback & F12A
+// Tom Killingback (z5256086 & H11B)
 // Makes a rectangle with a diagtional line
 
 #include <stdio.h>
 
 int main(void) {
 
-    int size = 0;
+    // Reading input from user
+    int square_size = 0;
     printf("Please enter a size: ");
-    scanf("%d", &size);
+    scanf("%d", &square_size);
     
+    // Print out the square
+    int curr_row = 0;
+    while (curr_row < square_size) {
+        
+        int curr_col = 0;
+        while (curr_col < square_size) {
 
-    int row = 0;
-    while (row < size) {
-    
-        int col = 0;
-
-        while (col < size) {
-            
-            // Check if diagional
-            if (row == col) {
-                printf("*");
+            if (curr_row == curr_col) {
+                printf("*");  
             } else {
                 printf("-");
             }
-            col++;
 
+            curr_col++;
         }
+            
         printf("\n");
-        row++;
-    }
-
-    return 0;
+        curr_row++;
+    } 
+    return 0; 
 }

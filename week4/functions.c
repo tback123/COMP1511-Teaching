@@ -1,27 +1,55 @@
 #include <stdio.h>
 
-int my_product(int num_1, int num_2);
+int my_addition(int input1, int input2);
+
+// If number is even - return 1
+// if number is odd - return 0
+int is_even_or_odd(int number);
+
+int multiply_by_two(int number);
 
 int main(void) {
 
-    int a = 10;
+    int a = 11;
     int b = 5;
-    int num_1 = 11;
-    int num_2 = 72;
-    
-    int result1 = my_product(a, b);
-    int result2 = my_product(num_1, num_2);
 
-    printf("result 1 was: %d\n", result1);
-    printf("result 2 was: %d\n", result2);
+    int sum = my_addition(a, b);
+
+    printf("Sum is: %d\n", sum);
+
+    int is_even = is_even_or_odd(sum);
+    printf("is_even has the value: %d\n", is_even);
+
+    int my_number = 2;
+    my_number = multiply_by_two(my_number);
+    printf("My number has value: %d\n", my_number);
 
     return 0;
 }
 
-int my_product(int num_1, int num_2) {
+int multiply_by_two(int number) {
+    number = number * 2;
+    return number;
+}
 
-    int product = num_1 * num_2;
 
-    return product;
+int my_addition(int input1, int input2) {
+
+    int result = input1 + input2;
+
+    return result;
+}
+
+int is_even_or_odd(int number) {
+
+    if (number % 2 == 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+
+    printf("Hello!\n");
+    // if the number was neither even or odd, return -1
+    return -1;
 
 }
