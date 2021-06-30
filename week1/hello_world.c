@@ -1,12 +1,21 @@
-// Simple hello world
-// Writting by Tom Killingback
-// 21T1 for COMP1511
+// Hello world 
+// Written by Wed09B
 
 #include <stdio.h>
 
-int main (void) {
+int main(void) {
 
-    printf("Hello world!\n");
+    printf("Hello World!\n");
 
     return 0;
 }
+
+/*
+
+
+    Write -> Compile -> Run
+    
+    (gedit)   (dcc)     ./<my_prog>
+
+
+*/

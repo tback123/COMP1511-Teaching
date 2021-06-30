@@ -1,0 +1,27 @@
+
+// Read in a number (int)
+// Print out 2 * the inputted number
+
+#include <stdio.h>
+
+#define MY_CONSTANT 150
+
+int main(void) {
+
+    int input = 0;
+    scanf("%d", &input);
+    
+    printf("Before Checking: %d\n", input);
+    
+    if ((input % 2) == 0) {
+    
+        printf("Number is divisible by 2\n");
+    
+    } 
+    
+    printf("this always runs\n");
+    
+    
+
+    return 0;
+}
