@@ -9,9 +9,7 @@
 
 // Given sizes, print a matrix
 void print_matrix(int rows, int columns, int matrix[rows][columns]);
-
 void scalar_multiply(int rows, int columns, int matrix[rows][columns], int scalar);
-
 
 int main(void) {
 
@@ -23,12 +21,33 @@ int main(void) {
 
     // Scalar_multiply
     printf("Doing scalar multiplication...\n");
+    scalar_multiply(ROWS, COLS, grid, 14);
 
     // After change
     print_matrix(ROWS, COLS, grid);
 
 
     return 0;
+}
+
+// Given sizes and a matrix, multiply every element by the scalar
+void scalar_multiply(int rows, int columns, int matrix[rows][columns], int scalar) {
+
+    // Loop through rows
+    int curr_row = 0;
+    while (curr_row < rows) {
+
+        // Loop through cols
+        int curr_col = 0;
+        while (curr_col < columns) {
+            
+            matrix[curr_row][curr_col] = matrix[curr_row][curr_col] * scalar;
+
+            curr_col++;
+        }
+        curr_row++;
+    }
+
 }
 
 // Given sizes, print a matrix
