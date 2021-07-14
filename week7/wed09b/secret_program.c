@@ -8,6 +8,7 @@ int main(void) {
 
     char my_word[] = "Hello!";
 
+    // What does result represent (i.e. what does secret_function return?)
     int result = secret_function(my_word);
 
     printf("The result was: %d\n", result);
