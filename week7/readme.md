@@ -2,16 +2,16 @@
 
 ## Topics
 - Chars
-    - `chars.c`
+    - chars.c
 - Strings
-    - `strings.c`
-    - `secret_program.c`
+    - strings.c
+    - secret_program.c
 - `getchar()` & `putchar()`
-    - `chars2.c`
+    - chars2.c
 - `fgets()`
-    - `echo_twice.c`
+    - echo_twice.c
 - Command line arguments
-    - `cmd_args1.c`
+    - cmd_args1.c
 
 ## Class Specifc Code
 - [21T2 wed09b](wed09b/)
