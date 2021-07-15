@@ -1,18 +1,17 @@
 // Example chars program
 
 #include <stdio.h>
+// EOF == -1
 
 int main(void) {
 
-    int my_num = 21; // int 4 bytes, 32 bits: 0-> 2,147,483,648
+    int my_char = getchar();
 
-    char my_char = 'a'; // char 1 byte, 8 bits: 255 individual variable
-
-    printf("My Num is: %d\n", my_num);
-    printf("My char is: %c\n", my_char);
+    printf("My char is (number): %d\n", my_char);
+    printf("My char is (char): %c\n", my_char);
 
     // Checking if we have a digit
-    if (my_char >= '0' && my_char <= '9') {
+    if (my_char >= '0' && my_char <= '0') {
         printf("My char is representing a number\n");
     }
 
