@@ -6,7 +6,7 @@
 - Struct Pointers
     - struct_ptrs.c
 - Linked Lists
-    - struct_ptrs.c
+    - linked_list.c
 
 ## Class Specifc Code
 - [21T2 wed09b](wed09b/)
