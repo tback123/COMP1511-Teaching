@@ -15,10 +15,24 @@ struct node *create_list();
 void print_list(struct node *head);
 
 // Functions to implement
+struct node *list_delete_last(struct node *head);
 
 int main(void) {
 
-    struct node *head = create_list();
+    char string[1000];
+
+    fgets(string, 1000, stdin)
+
+    scanf("%d %d %d %d", &num1, &num2, &num3, &num4);
+
+
+    // struct node *head = create_list();
+    struct node *head = create_node(5);
+
+    print_list(head);
+    printf("####\n");
+
+    head = list_delete_last(head);
 
     print_list(head);
 
@@ -64,3 +78,32 @@ void print_list(struct node *head) {
 
 }
 
+struct node *list_delete_last(struct node *head) {
+
+    // Check if there is at least 1 thing in list
+    if (head == NULL) {
+        return NULL;
+    }
+
+    // Check if there is only 1 element in the list
+    if (head->next == NULL) {
+        // Only 1 element, delete that,
+        free(head);
+        return NULL;
+    }
+
+    // At least 2 elements in the list
+    struct node *curr = head;
+    while (curr->next->next != NULL) {
+        curr = curr->next;
+    }
+
+    //curr == second last element in the list
+    // Free the last element
+    free(curr->next);
+    // Set the second last element to point to NULL (making it the new last element)
+    curr->next = NULL;
+
+    return head;
+
+}

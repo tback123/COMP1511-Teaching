@@ -15,15 +15,24 @@ struct node *create_list();
 void print_list(struct node *head);
 
 // Functions to implement
+struct node *list_add_last(struct node *head, int data);
 
 int main(void) {
 
-    struct node *head = create_list();
+    // struct node *head = create_list();
+    struct node *head = NULL;
 
+    print_list(head);
+
+    head = list_add_last(head, 10);
+
+    printf("####\n");
     print_list(head);
 
     return 0;
 }
+
+
 
 // Given some data, return a new node with that data
 struct node *create_node(int data) {
@@ -64,3 +73,22 @@ void print_list(struct node *head) {
 
 }
 
+struct node *list_add_last(struct node *head, int data) {
+
+    if (head == NULL) {
+        return create_node(data);
+    }
+
+    struct node *curr = head;
+    while (curr->next != NULL) {
+        curr = curr->next;
+    }
+    
+    // CURR->next == NULL
+    // CURR is pointing to the last element in the list
+    struct node *new_node = create_node(data);
+    curr->next = new_node;
+
+    return head;
+
+}
