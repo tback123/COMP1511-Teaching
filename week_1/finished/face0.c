@@ -1,5 +1,5 @@
-d// This prints out a face
-// Tom
+// Basic face program
+// Written by <>
 
 #include <stdio.h>
 
