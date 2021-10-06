@@ -6,14 +6,23 @@
 int main(void) {
 
     // Read in a number
-    int input = 0;
+    int max_num = 0;
     printf("Please enter a number: ");
-    scanf("%d", &input);
+    scanf("%d", &max_num);
+    
+    // Init
+    int counter = 0;
     
     // TODO: Choose condition
-    while () {
-        // TODO: Write loop code
+    while (counter < max_num) {
 
+        // Main loop code
+        if (counter % 7 == 0) {
+            printf("%d\n", counter);
+        }
+        
+        // Update condition
+        counter++;
     }
 
     return 0;

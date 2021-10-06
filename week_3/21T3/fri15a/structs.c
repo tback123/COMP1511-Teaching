@@ -3,16 +3,26 @@
 
 #include <stdio.h>
 
-// TODO: Define a struct
+// Definition
+struct person {
+    char name;
+    int age;
+    double height;
+};
 
 int main(void) {
-
-    // TODO: Build a strucut
+  
+    struct person tom = {};
+    
+    tom.name = 't';
+    tom.age = 21;
+    tom.height = 184.5;
+    
 
     // TODO: Print the info from the struct
-    printf("The hour is: {}", {});
-    printf("The minute is: {}", {});
-    printf("The meridiem is: {}", {});
+    printf("The name is: %c\n", tom.name);
+    printf("The age is: %d\n", tom.age);
+    printf("The height is: %lf\n", tom.height);
 
 
     return 0;

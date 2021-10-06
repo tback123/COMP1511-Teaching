@@ -5,8 +5,19 @@
 
 int main(void) {
 
-    // TODO: write a loop to print this out 10 times
-    prinf("Hello World!\n");
+    // init
+    int counter = 0;
+    
+    // Condition
+    while (counter < 10) {
+    
+        // Main code
+        printf("Hello World!\n");
+        
+        // Update the condition 
+        counter = counter + 1;
+    }
+        
 
     return 0;
 }

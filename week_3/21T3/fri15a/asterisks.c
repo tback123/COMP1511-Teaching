@@ -10,10 +10,21 @@ int main(void) {
     printf("Please enter an integer: ");
     scanf("%d", &input);
     
-    // TODO: Choose condition
-    while () {
-        // TODO: Write loop code
+    // Init
+    int counter = 0;
+    while (counter < input) {
+            
+        int second_counter = 0;
+        while (second_counter < input) {
+            printf("*");
+            second_counter++;
+        }
+        
+        printf("\n");
 
+        
+        // Update condition
+        counter++;
     }
 
     return 0;
