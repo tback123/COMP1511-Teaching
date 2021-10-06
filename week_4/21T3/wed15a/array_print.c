@@ -10,7 +10,7 @@ void array_print(int length, int array[]);
 int main(void) {
 
     // Initialise array
-    int my_array[ARRAY_SIZE] = {0};
+    int my_array[ARR_SIZE] = {0};
 
     // Print array
     array_print(ARR_SIZE, my_array);
@@ -23,6 +23,11 @@ int main(void) {
 // array and the array and prints the contents to STDOUT
 void array_print(int length, int array[]) {
 
-    // TODO: Code here!
+    int index = 0;
+    while (index < length) {
+        printf("%d\n", array[index]);
+        index++;
+    }
 
+    return;
 }
