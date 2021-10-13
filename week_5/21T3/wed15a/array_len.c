@@ -2,29 +2,33 @@
 // of an array are positive
 
 
-int test_all_positive(int length, int nums[]);
+int test_all_pos(int length, int nums[]);
 
 int main() {
 
-    int array[5] = {1, 2, 3, 4, 5};
+    int array[5] = {0, 2, 3};
 
     return 0;
 }
 
-int test_all_positive(int length, int nums[]) {
+int test_all_pos(int length, int nums[]) {
 
-    int counter = 0;
-    while (counter < length) {
-
-        // if there is a valuse <= 0, return 0
-        if (nums[counter] <= 0) {
-            return 0;
+    int counter_of_pos = 0;
+    int index = 0;
+    while (index < length) {
+        
+        if (nums[index] > 0) {
+            counter_of_pos++;
         }
 
-        counter++;
+        index++;
     }
 
-    // if everything is >0, return 1
-    return 1;
+    if (length == counter_of_pos) {
+        return 1;
+    } else {
+        return 0;
+    }
+
 }
 
