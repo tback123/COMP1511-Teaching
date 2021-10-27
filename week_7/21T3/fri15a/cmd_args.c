@@ -1,4 +1,4 @@
-// Example chars program
+// An example program using comand line arguments
 
 #include <stdio.h>
 
