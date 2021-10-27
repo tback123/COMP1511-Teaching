@@ -1,18 +1,22 @@
 # Week 7 COMP1511
 
 ## Topics
-- Chars
-    - chars.c
+- `getchar()` & `putchar()`
+    - get_and_put_char.c
+    - sum_digits.c
 - Strings
     - strings.c
     - secret_program.c
-- `getchar()` & `putchar()`
-    - chars2.c
 - `fgets()`
+    - fgets.c
     - echo_twice.c
 - Command line arguments
-    - cmd_args1.c
+    - cmd_args.c
+- struct pointers
+    - `struct_pointers.c`
 
 ## Class Specifc Code
-- [21T2 wed09b](wed09b/)
-- [21T2 thu11b](thu11b/)
+- [21T2 wed09b](21T2/wed09b/)
+- [21T2 thu11b](21T2/thu11b/)
+- [21T3 wed15a](21T3/wed15a/)
+- [21T3 fri15a](21T3/fri15a/)
