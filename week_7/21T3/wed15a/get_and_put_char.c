@@ -2,10 +2,17 @@
 
 int main(void) {
 
-    char ch;
     printf("Enter character: ");
-    scanf(" %c", &ch);
-    printf("Scanned in '%c'\n", ch);
 
-    return 0
+    // Returns EOF on ctrl+d
+    // EOF == -1
+    int ch = getchar();
+
+    if (ch == EOF) {
+        printf("Got CTRL+D\n");
+    } else {
+        printf("Scanned in '%c'\n", ch);
+    }
+
+    return 0;
 }
