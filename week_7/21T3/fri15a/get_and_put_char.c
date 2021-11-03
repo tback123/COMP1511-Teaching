@@ -2,10 +2,19 @@
 
 int main(void) {
 
-    char ch;
     printf("Enter character: ");
-    scanf(" %c", &ch);
-    printf("Scanned in '%c'\n", ch);
+    putchar('a');
+    //scanf(" %c", &ch);
+    
+    // If CTRL+D is pressed => ch == EOF
+    // get char returns an int
+    int ch = getchar();
 
-    return 0
+    if (ch == EOF) {
+        printf("CTRL+D was pressed!\n");
+    } else {
+        printf("Scanned in '%c'\n", ch);
+    }
+
+    return 0;
 }

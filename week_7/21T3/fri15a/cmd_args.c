@@ -2,8 +2,11 @@
 
 #include <stdio.h>
 
-int main(void) {
+int main(int argc, char *argv[]) {
 
+    printf("argc was: %d\n", argc);
+
+    printf("argv[1] was '%s'\n", argv[1]);
 
     return 0;
 }
