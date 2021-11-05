@@ -9,5 +9,18 @@
 #include "letters.h"
 
 int check_letter(char ch) {
-    // TODO: complete this function
+    
+    // Check if its an uppercase
+    if (ch >= 'A' && ch <= 'Z') {
+        return 1;
+    }
+
+    // check if its a lowercase
+    if (ch >= 'a' && ch <= 'z') {
+        return 1;
+    }
+
+    // if neither, the must not be a letter!
+    return 0;
+
 }
