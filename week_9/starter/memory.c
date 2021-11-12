@@ -24,6 +24,5 @@ int main (void) {
     // What is 'user after free'
    
 
-
     return 0;
 }

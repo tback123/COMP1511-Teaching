@@ -15,6 +15,7 @@ struct node *create_list();
 void print_list(struct node *head);
 
 // Functions to implement
+struct node *copy_list(struct node *old_head);
 
 int main(void) {
 
@@ -64,3 +65,34 @@ void print_list(struct node *head) {
 
 }
 
+// Given a linked list, creates an idential linked list
+// Returns the head of this new linked list
+struct node *copy_list(struct node *old_head) {
+
+    // Is the list empty?
+    if (old_head == NULL) {
+        // Nothing in the list, therefore, nothing to copy!
+        return NULL;
+    }
+
+    // Create the first node, with data from the old first node
+    struct node *new_head = create_node(old_head->data)
+
+    // Setup points
+
+    // Point to the new list
+    struct node *prev = new_head;
+
+    // Point to the old list
+    struct node *curr = old_head->next;
+
+    // Move through the old list and copy to the new list.
+    while (curr != NULL) {
+        struct node *new = create_node(curr->data);
+        prev->next = new;
+        prev = prev->next;
+        curr = curr->next;
+    }
+    
+    return new_head;
+}
