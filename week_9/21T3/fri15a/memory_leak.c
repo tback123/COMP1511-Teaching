@@ -1,4 +1,3 @@
-
 int i = 0;
 struct node *head = NULL;
 
