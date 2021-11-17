@@ -13,6 +13,8 @@ struct node {
 #include "list.h"
 
 
+
+
 List new_list() {
     List new_list = malloc(sizeof(struct list));
     new_list->head = NULL;
