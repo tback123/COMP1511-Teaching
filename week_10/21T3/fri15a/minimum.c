@@ -20,19 +20,56 @@ int find_min(struct node *head);
 int main(void) {
 
     struct node *head = NULL;
-    head = add_tail(head, 1);
+    head = add_tail(head, 10);
     head = add_tail(head, 2);
-    head = add_tail(head, 3);
+    head = add_tail(head, 8);
+    head = add_tail(head, 30);
+    head = add_tail(head, 9);
 
     print_list(head);
 
     // Todo find min of linked list
+    int min = find_min(head);
 
+    printf("Min was: %d\n", min);
 
     return 0;
 }
 
 // Implement find_min here
+int find_min(struct node *head) {
+
+    printf("Looking at node: %d\n", head->data);
+
+    // check if nothing else left in list
+    if (head->next == NULL) {
+        return head->data;
+    }
+
+    // Find min of the remaining list
+    int min_of_remaining_list = find_min(head->next);
+
+    // compare firt with min of everything else
+    if (head->data < min_of_remaining_list ) {
+        return head->data;
+    } else {
+        return min_of_remaining_list;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Creates a node
