@@ -1,22 +1,36 @@
-// A same use of an ADT
-
 #include <stdio.h>
 
 #include "list.h"
 
+void handle_command(struct list *pancake, char command);
+
 int main(void) {
+    struct list *pancake = create_list();
 
-    // Createa list 
-    List my_list = new_list();
-
-    // Add 1 & 2 to the list.
-    list_add(my_list, 1);
-    list_add(my_list, 2);
-    print_list(my_list);
-
-    list_add(my_list, 5);
-    list_add(my_list, 6);
-    print_list(my_list);
-
+    // Keep reading commands until EOF
+    char command;
+    while (scanf(" %c", &command) == 1) {
+        handle_command(pancake, command);
+    }
     return 0;
+}
+
+// Handles a command
+void handle_command(struct list *pancake, char command) {
+    char input_line[MAX_STR_LENGTH];
+
+    // TODO: Finish this function. Add more command conditions!
+    //
+    // Important commands:
+    // - 'a' <name>: place new pancake onto pancake stack
+    // - 'e':        eat top pancake
+    // - 'p':        print pancake stack
+    //
+
+    if (command == 'a') {
+        fgets(input_line, MAX_STR_LENGTH, stdin);
+        push_head(pancake, input_line);
+        printf("Added: %s", input_line);
+    }
+
 }

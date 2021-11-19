@@ -1,68 +1,139 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-struct list {
-    struct node *head;
-};
-
-struct node {
-    int data;
-    struct node *next;
-};
+#include <string.h>
 
 #include "list.h"
 
+struct list *create_list() {
+    struct list *new = malloc(sizeof(struct list));
+    new->nodes = NULL;
 
-List new_list() {
-    List new_list = malloc(sizeof(struct list));
-    new_list->head = NULL;
-    return new_list;
-}
-
-struct node *new_list_node(int data) {
-    struct node *new = malloc(sizeof(struct node));
-    new->next = NULL;
-    new->data = data;
     return new;
+};
+
+struct node *create_node(char *value) {
+    struct node *new = malloc(sizeof(struct node));
+    strcpy(new->data, value);
+    new->next = NULL;
+
+    return new;
+};
+
+// Pushes a new node to the head of a given linked list
+void push_head(struct list *list, char *value) {
+    struct node *new = create_node(value);
+
+    new->next = list->nodes;
+    list->nodes = new;
 }
 
-void list_add(List list, int data) {
-    // Check if there is at least one thing in the list
-    if (list->head == NULL) {
-        list->head = new_list_node(data);
+// Pushes a new node to the tail of a given linked list
+void push_tail(struct list *list, char *value) {
+    struct node *new = create_node(value);
+
+    if (list->nodes == NULL) {
+        list->nodes = new;
         return;
     }
 
-    // Start at the begining and look for the last node
-    // in the list
-    struct node *curr = list->head;
+    struct node *curr = list->nodes;
     while (curr->next != NULL) {
-        curr = curr->next;   
-    }
-
-    // CURR == Last element in the list
-    
-    // Create the new node
-    struct node *new_node = new_list_node(data);
-
-    // Link to end of list
-    curr->next = new_node;
-
-    return;
-
-}
-
-void print_list(List list) {
-
-    printf("### START OF LIST ###\n");
-
-    struct node *curr = list->head;
-    while (curr != NULL) {
-        printf("Data: %d\n", curr->data);
-
         curr = curr->next;
     }
 
-    printf("### END OF LIST ###\n");
+    curr->next = new;
+}
 
+// Pops the node at the head of a given linked list and returns it
+struct node *pop_front(struct list *list) {
+    if (list->nodes == NULL) {
+        return NULL;
+    }
+
+    struct node *old_head = list->nodes;
+    list->nodes = list->nodes->next;
+    return old_head;
+}
+
+// Pops the node at the tail of a given linked list and returns it
+struct node *pop_back(struct list *list) {
+    if (list->nodes == NULL) {
+        return NULL;
+    }
+
+    struct node *curr = list->nodes;
+    struct node *prev = NULL;
+    while (curr->next != NULL) {
+        prev = curr;
+        curr = curr->next;
+    }
+
+    if (prev == NULL) {
+        list->nodes = NULL;
+    } else {
+        prev->next = NULL;
+    }
+
+    return curr;
+}
+
+// Insert a new node at position `index` of a linked list. If index is negative,
+// inserts at head, if index is larger than size, inserts at tail.
+void insert_at_index(struct list *list, char *value, int index) {
+    struct node *new = create_node(value);
+    if (index < 0 || list->nodes == NULL) {
+        new->next = list->nodes;
+        list->nodes = new;
+    }
+
+    int i = 0;
+    struct node *curr = list->nodes;
+    struct node *prev = NULL;
+    while (curr != NULL && i != index) {
+        i++;
+        curr = curr->next;
+    }
+
+    if (prev == NULL) {
+        new->next = list->nodes;
+        list->nodes = new;
+    } else {
+        new->next = curr;
+        prev->next = new;
+    }
+}
+
+// Returns the data at the head of the given linked list
+char *peek_top(struct list *list) {
+    if (list->nodes == NULL) {
+        return NULL;
+    }
+
+    return list->nodes->data;
+}
+
+// Returns the data at the `index` node in the given linked list. Returns
+// NULL if index not in range.
+char *peek_index(struct list *list, int index) {
+    int i = 0;
+    struct node *curr = list->nodes;
+    while (curr != NULL && i != index) {
+        i++;
+        curr = curr->next;
+    }
+
+    if (curr == NULL) {
+        return NULL;
+    }
+
+    return curr->data;
+}
+
+// Prints a given linked list from head to tail
+void print_list(struct list *list) {
+    struct node *curr = list->nodes;
+    while (curr != NULL) {
+        printf("%s", curr->data);
+        curr = curr->next;
+    }
 }
