@@ -1,2 +1,5 @@
 help_sessions/*
 *~
+*.emails
+*.names
+*.zids
