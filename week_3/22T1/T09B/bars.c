@@ -1,0 +1,5 @@
+/*
+
+    Copy in code from asterisks.c upon compleation
+
+*/
