@@ -5,8 +5,17 @@
 
 int main(void) {
 
-    // TODO: write a loop to print this out 10 times
-    prinf("Hello World!\n");
+    // TODO: write print this out 10 times
+
+    int counter = 0;
+
+    while ( counter < 10 ) {
+        printf("%d: Hello World!\n", counter);
+        counter++;
+    }
+
+
+    printf("Thank you!\n");
 
     return 0;
 }
