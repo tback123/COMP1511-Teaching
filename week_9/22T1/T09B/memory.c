@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct node {
+    int number;
+    struct node *next;
+};
+
+int main (void) {
+
+    
+    // Malloc Refresher (I/O)
+    struct node *my_ptr = malloc(sizeof(struct node));
+    my_ptr->number = 3;
+    
+    // What is a memory-leak
+    /*
+        Mallocing memory without freeing
+    */
+
+    
+    // Why are these bad bugs?
+    // Hard to find
+    
+    // What does free do?
+    free(my_ptr);
+
+
+    // What are the inputs of free?
+    // The address of the memory to free.
+    
+
+
+    // What is 'user after free'
+    my_ptr->number = 10;
+   
+
+    return 0;
+}
