@@ -5,7 +5,7 @@
 
 int main(void) {
 
-    printf(" /\\___/\\\n");
+    printf(" /\___/\\n");
     printf("(=' w '=)\n");
         
     return 0;

@@ -1,9 +1,9 @@
-// A program to show the use case of a struct
+// A program to show the use case of enums
 // Written by Tom's COMP1511 Tutorial
 
 #include <stdio.h>
 
-// TODO: Define a struct
+// TODO: Define an enum
 
 
 int main(void) {

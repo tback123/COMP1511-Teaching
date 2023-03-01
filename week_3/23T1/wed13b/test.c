@@ -4,8 +4,12 @@
 #include <stdio.h>
 
 int main(void) {
-    
-    printf("*\n");
+
+    int count = 1;
+    while (count <= 100) {
+        printf("%d: Hello!\n", count);
+        count = count + 1;
+    }
 
     return 0;
 }

@@ -3,17 +3,20 @@
 
 #include <stdio.h>
 
-// TODO: Define a struct
-
+enum days {
+    MON,
+    TUE,
+    WED,
+    THU,
+    FRI
+};
 
 int main(void) {
 
-    // TODO: Init a strucut
+    enum days day_of_the_week = 100;
 
     // TODO: Print the info from the struct
-    printf("The shoe size is: {}", {});
-    printf("The height is: {}", {});
-    printf("The initial is: {}", {});
+    printf("The Mon is: %d\n", day_of_the_week);
 
 
     return 0;
