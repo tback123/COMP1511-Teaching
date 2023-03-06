@@ -3,9 +3,29 @@
 
 #include <stdio.h>
 
-int main(void) {
-    
-    printf("*\n");
+#define NUM_STAR 10
 
+int main(void) {
+
+    int row = 0;
+    while (row < 4) {
+
+        // Print a row
+        int col = 0;
+        while (col < 4) {
+
+            if (row == col) {
+                printf("X");
+            } else {
+                printf("*");
+            }
+
+            col++;
+        }
+        printf("\n");
+
+        row++;
+    }
+    
     return 0;
 }
