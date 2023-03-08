@@ -1,17 +1,22 @@
 #include <stdio.h>
 
-  int main(void) {
-  int a = 7; int b = 12; int c;
+#define PRIMARY 7
+#define SECONDARY 12
+
+int main(void) {
+  // Init variables
+  int grade = -1;
+
+  // Read input
   printf("What year are you in? ");
-  int c = 20;
-  scanf("%d", &c);
-      if (c > a || c == a){
-      if (c < b || c == b){
-      printf("You are in high school\n");
-      }
-      }
-      if ( c < 7 || c > 12) {
-      printf("You are not in high school\n");
-      }
-      return 0;
-              }
+  scanf("%d", &grade);
+
+  // Check year
+  if (grade >= PRIMARY && grade <= SECONDARY){
+    printf("You are in high school\n");
+  } else if ( grade < PRIMARY || grade > SECONDARY) {
+    printf("You are in primary school\n");
+  }
+  
+  return 0;
+}

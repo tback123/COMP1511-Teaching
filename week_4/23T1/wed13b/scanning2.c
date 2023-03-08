@@ -3,8 +3,14 @@
 int main(void) {
     
     int num;
-    scanf("%d", &num);
-    printf("%d\n", num);
+
+    int result = scanf("%d", &num);
+    while (result == 1) {
+        printf("Result: %d\n", result);
+        result = scanf("%d", &num);
+    }
+
+    printf("Goodbye\n");
 
     return 0;
 }
